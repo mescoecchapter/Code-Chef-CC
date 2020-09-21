@@ -1,34 +1,36 @@
-// enlist all prime numbers upto the given number
-
 #include<iostream>
 using namespace std;
 
 int main()
 {
-	int num;
-	cout<<"enter number:";
-	cin>>num;
-	
-	int cnt=0;
-	
-	for(int i=2;i<=num;i++)
+
+int num;
+int flag;
+
+cout<<"enter number:";
+cin>>num;
+
+for(int j=2;j<=num;j++)
+{
+    flag = 0;
+    
+for(int i=2;i<=j/2;i++)
+{
+	if(j%i == 0)
 	{
-	   
-	cnt = 0;
-	for(int j=2;j<=i/2;j++)
-	{
-		
-		if(i%j == 0)
-		{
-			cnt++;
-		}
+		flag=1;
+		break;
 	}
-	
-	if(cnt == 0)
-	{
-		cout<<i<<endl;
-	}
-	
 }
+
+if (flag==0)
+{
 	
+	cout<<j<<endl;
 }
+
+  
+}
+return 0;
+}
+
