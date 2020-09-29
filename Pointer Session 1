@@ -1,0 +1,153 @@
+#include <iostream>
+using namespace std;
+int main() {
+    
+    //Pointer session 1
+
+    //--------  Address of or refrencing Operator -----
+
+    int variable = 10;
+
+    // to access address of the variable
+    // '&' (read as a address of operator) operator returns address of the varable
+
+    cout<<"Address of variable: "<<&variable<<endl;
+
+    //------ Indirection / Derefrencing Operator ----
+
+    // '*' (read as a derefrencing operator) returns the content
+    // present at given address
+
+    cout<<"Value at "<<&variable<<" address is "<<* (&variable)<<endl;
+    
+    //meaning of above line is 
+    // -- give me value present at given address\
+
+    //-- Introducing Pointer Variable
+
+    /*
+
+        Definition in short: pointer is variable which stores memory address that's it
+      
+
+    
+
+    //Basic syntax
+
+    type_of_pointer *name_of_pointer_variable = memory address;
+
+    //remember '*' in above syntax is not multiplication / indirection operator
+    // it is just standard syntax to differentiate pointer variable
+    
+    */
+
+    //for ex we want to create pointer of type int
+
+    int age = 20;
+
+    // now we will create pointer of type 'int' which will
+    //store address of variable age;
+
+    int *ptrToAge = &age;
+
+    // now using 'ptrToAge' pointer variable we can make 
+    // changes in actual variable age
+
+    cout<<"Address of age: "<<&age<<endl;
+    cout<<"Address of age: "<<ptrToAge<<endl;
+
+    //above two lines will give the same result
+    //because we are (Now, you must know why is that. :))
+
+    // if there is any doubt you can always mail us at "mescoecchapter@gmail.com"
+    // We will be happy to help
+
+    
+    // Now let's see how we can print value of variable age
+    // using ptrToAge
+
+    cout<<"Actual value of age: "<<age<<endl;
+    cout<<"Value of age using ptrToAge: "<<*(ptrToAge)<<endl;
+
+    //Like 'Subhash chandra bose' said "Tum muze khoon do mai tumhe aazaadi dungaa"
+    // '*' (indirection operator) says "Tum muze address do mai tumhe value do" :)
+
+
+    // 'ptrToAge' pointer variable will also have some memory address
+    // how we can see that --> using '&' (address of operator)
+
+    cout<<"Address of ptrToAge: "<<&ptrToAge<<endl;
+
+    //Hmm... what if we want to store address of 'ptrToAge' variable
+    //can we do that?
+
+    //Sure we can.
+
+    //-----Extended concept of pointers--------------
+
+    int **ptrToPtr = &ptrToAge;
+
+    cout<<"Address of ptrToAge: "<<&ptrToAge<<endl;
+    cout<<"Address of ptrToAge using 'ptrToptr': "<<ptrToPtr<<endl;
+
+    //access what is the address of age using 'ptrToptr'
+
+    cout<<"Addresss of age using 'ptrToPtr': "<<*ptrToPtr<<endl;
+    cout<<"Actual Addresss of age(to cross check): "<<&age<<endl;
+    
+    //access value of age using ptrToptr
+    
+    cout<<"Value of age using *ptrToPtr: "<<**ptrToPtr<<endl;
+
+    //update value of age using 'ptrToPtr'
+
+    **ptrToPtr = 100; //ohh..100 years old....preety old now :)
+
+    cout<<"Your are "<<age<<" old now"<<endl;
+    cout<<"Access age using 'ptrToPtr: "<<**ptrToPtr<<endl; 
+
+    // '*' (ptrToAge in above case) to understand concept we can call level 1 pointer
+    // '**' (ptrToPtr in above case) level 2
+    //... you can try more by yourself '***', '****', etc
+
+    //---------pointer arithmetic-------------
+
+    // We can not add, multiply, divide two addresses 
+    // but we can do substraction
+    //ex,
+    
+    int var1 = 10;
+    int var2 = 20;
+
+    int *ptrVar1 = &var1;
+    int *ptrVar2 = &var2;
+
+    ptrVar1 + ptrVar2; //Invalid Operation
+    
+    ptrVar1 * n(n is some constant) //Invalid Operation
+
+    ptrVar1 / ptrVar2 //Invalid Operation
+
+    ptrVar1 + 1 //Valid 
+
+    // literal addition will not happen 
+    // refer following two formulaes 
+
+    /* 
+        'n' is some constant value
+
+        Addition --> pointer + n = pointer + sizeof(type of pointer) * n 
+
+        Substraction --> pointer - n = pointer - sizeof(type of pointer) * n
+
+        pointer1 - pointer2 = (Literal substraction of address) / sizeof(type of pointer) 
+
+    //We can't do operations like division, multiplication, 
+
+
+    // To solve some interesting MCQs visit below link
+    //https://www.indiabix.com/c-programming/pointers/
+
+
+
+}
