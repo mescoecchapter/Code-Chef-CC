@@ -1,0 +1,111 @@
+#include <iostream>
+using namespace std;
+
+//concept of Dangling Pointer
+void fun(){
+
+    int *dangPtr = NULL;
+
+    {
+
+        int var = 10;
+
+        //*dangPtr = &var;
+
+    }
+
+//function to swap two numbers
+//by passing address / refrence
+
+void swapNumbers(int *first, int *second){
+
+        int tempVar = *first;  
+        *first = *second;
+        *second = tempVar;
+
+    }
+
+}
+
+int main() {
+        
+        int firstNo;
+        int secondNo;
+
+        cin>>firstNo;
+        
+        cin>>secondNo;
+
+        cout<<firstNo<<" "<<secondNo<<endl;
+
+        swapNumbers(&firstNo, &secondNo); //calling function(call by refrence)
+
+        cout<<firstNo<<" "<<secondNo<<endl;
+
+
+        // Array manipulation using pointer
+
+
+        int arr[5];
+        int n;
+
+        int *ptr = arr;
+        //int *ptr = &arr[0];
+
+        cin>>n;
+
+        //input array elements
+        for(int i = 0; i < n; i++){
+
+            cin>>ptr[i];  
+        }
+
+        //output array elments
+
+        for(int i = 0; i < n; i++){
+
+            cout<<*(ptr + i)<<" ";  
+        }
+
+        int *p; // uninitialized or wild pointer
+
+        /*
+
+            It is good practice to iitialize pointers to  NULL if not using immediately
+            after declaration otherwise it can terminate program(Invalid memory access)
+
+            - NULL is an macro
+            - value of NULL is 0
+            - present in #include<stdio.h>
+            - defined as #define NULL 0
+
+        */
+
+        int *notWildPointer = NULL;
+
+        // *p = 10;     //this is invalid memory access
+
+        // cout<<*p<<endl;
+
+        //fun();
+
+        int a = 10;
+        float b = 21.2;
+       // char ch = 'k';
+
+        //void *vPtr = &a;
+        
+        void *vPtr = &b; // 'vPtr' can store address of any type of variable
+        
+        //void *vPtr = &ch;
+
+        // type casting is mandatory while accessing data
+        // (data_type *) like shown below
+
+        cout<<*(float *)vPtr; // Void Pointer
+
+
+
+
+    return 0;
+}
