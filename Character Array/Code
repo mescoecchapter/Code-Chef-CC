@@ -1,0 +1,134 @@
+#include <iostream>
+using namespace std;
+
+void readLine(char sen[], int maxLen, char delim){
+
+    int i = 0;
+
+    char ch = cin.get();
+
+    while(ch != delim){
+
+        sen[i] = ch;
+        i++;
+
+        if(i == (maxLen - 1)){
+
+            break;
+        }  
+
+       ch = cin.get(); 
+        
+     }
+
+     sen[i] = '\0';
+
+     return;
+}
+int main() {
+    
+    //character array
+
+    // --- basic syntax as you know how to declare the array right
+
+        data_type array_name[size]; //this is basic declaration syntax
+
+        // now let's see how we can declare and iitialize array 
+        //with some values
+
+        char name[10] = {'a', 'b', 'c', 'd', 'e'};
+
+        //in above array we took size 10 but we initialized only first 5 blocks(bytes)
+        // other mem. locations will contains some garbage value
+
+        char name[5] = {'c', 'a', 't', '\0'};
+
+        // it is recomended to put null character at end
+        // if you are initializing array like above 
+        // otherwise there will be unexpected output
+
+        for(int i = 0; name[i] != '\0'; i++){   
+
+            cout<<name[i];
+        }
+
+        char name[10] = "CodeChef";
+
+        //this is another way to initialize array
+        //we call it as a 'string' 
+        // string is nothing but continious stream of characters
+
+
+        //in above initialization compiler automatially adds the null character
+        // at end it will be like this "CodeChef\0"
+
+        cout<<name<<endl;
+
+        cout<<sizeof(name)<<endl;
+
+        // you can cross check by finding size
+
+        //-----------------------------------------------
+
+        // now if you will give input as a sentence 
+        //ex--> CodeChef Campus Chapter
+        // in session we discussed concept on delimiter 
+        //so here compiler by default conside space as delimiter(data seprator)
+        //and it will ignore input given after first space
+
+
+        //So we created one function to handle this situation
+        
+        char sentence[100];
+
+        // we will be taking input from the user
+
+        int size = 100;
+        char delim = '\n'; // newline as a delimiter-->meaning it will ignore
+                           //input given after first press of enter key
+
+        
+        readLine(name, size, delim);
+
+        cout<<name<<endl;
+
+        // now you can give whatever delimter you want 
+        // see session's recording here https://www.youtube.com/channel/UCAis3cSCADX2jvEYQ6KJ3Jg
+        //Session name is "About Character array"
+
+        //------------------------------------------------
+
+        //but everytimg while solving question writing this long function 
+        //will take time.....hmm don't worry 
+        //C++ got us covered
+
+        cin.getline(array_name, size_of_array, delimiter_if_any);
+
+        //for above array we can use this function directly now
+
+        //suppose now I want delimter as a '#' hash
+
+        delim = '#';
+
+        cin.getline(sentence, size, delim);
+
+        //So now as soon as we comiler sees '#' it will ignore further input
+
+        /*
+            There is lot more to discuss deep about character arrays
+            but this is something we use commnly in 
+            out programs.
+
+
+            ------------------------------------
+
+
+
+            Soon we will be uploading video on string class and 
+            all it's important functions
+        
+        */
+
+
+         
+}
