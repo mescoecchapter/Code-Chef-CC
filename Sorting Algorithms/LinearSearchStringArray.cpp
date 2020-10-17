@@ -30,6 +30,7 @@ void Search :: LinearSearch(string arr[] , int length , string key)
        {
            cout<<key<<" is present at "<<i<<" index position.";
            flag = flag+1;
+	   break;
        }
    }
 
